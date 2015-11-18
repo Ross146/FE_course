@@ -5,17 +5,16 @@ body{
 	font-family: sans-serif;	
 	box-shadow: inset 0px 47px 24px -53px black;
 }
-
 header h1{
 	float: left;
 	font-weight: normal;
-	color: blue;
+	color: blue;	
 }
 header h4{
 	float: right;
 	font-weight: normal;
 	color: gray;
-	margin-top: 35px;
+	line-height: 32px;
 }
 header:after{
 	content: '';
