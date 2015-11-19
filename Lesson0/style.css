@@ -5,14 +5,18 @@ body{
 	font-family: sans-serif;	
 	box-shadow: inset 0px 47px 24px -53px black;
 }
+header * {
+   float: left;
+   font-weight: normal;
+}
 header h1{
-	float: left;
-	font-weight: normal;
+	/*float: left;*/
+	/*font-weight: normal;*/
 	color: blue;	
 }
 header h4{
 	float: right;
-	font-weight: normal;
+	/*font-weight: normal;*/
 	color: gray;
 	line-height: 32px;
 }
