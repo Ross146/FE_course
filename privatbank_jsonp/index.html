@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>privat</title>
+</head>
+<body>
+	<button onclick="go()">push me !!!</button>
+</body>
+<script>
+var CallbackRegistry = {}; 
+function scriptRequest(url, onSuccess, onError) {
+  var scriptOk = false; 
+  var callbackName = 'cb' + String(Math.random()).slice(-6);  
+  url += ~url.indexOf('?') ? '&' : '?';
+  url += 'callback=CallbackRegistry.' + callbackName;
+  console.log(url);
+
+  CallbackRegistry[callbackName] = function(data) {
+    console.log('callback run');
+    scriptOk = true; 
+    delete CallbackRegistry[callbackName]; 
+    onSuccess(data); 
+  };
+  function checkCallback() {
+    console.log('checkcallback run');
+    if (scriptOk) return; // сработал обработчик?
+    delete CallbackRegistry[callbackName];
+    onError(url); // нет - вызвать onError
+  }
+
+  var script = document.createElement('script');
+  script.onreadystatechange = function() {
+    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+      this.onreadystatechange = null;
+      setTimeout(checkCallback, 0); // Вызвать checkCallback - после скрипта
+    }
+  }
+  console.log('script load');
+  script.onload = script.onerror = checkCallback;
+  script.src = url;
+  document.body.appendChild(script);
+
+  
+}
+
+function ok(data) {
+      alert(data);
+    }
+function fail(url) {
+      alert('Ошибка при запросе ' + url);
+    }
+function go() {
+      // ответы могут приходить в любой последовательности!
+      // // scriptRequest("user?id=123", ok, fail);
+       scriptRequest("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5", ok, fail);
+      // scriptRequest("http://resources.finance.ua/ru/public/currency-cash.json", ok, fail)   
+    }
+</script>
+</html>
+
+
+
+
+
+<!-- https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5 -->
