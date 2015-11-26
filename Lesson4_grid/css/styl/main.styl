@@ -1,0 +1,91 @@
+@import 'nib'
+
+$color_gray = #dcdcdc
+$color_darkgray = #777777
+$border = #696969
+
+.gray 
+	background-color $color_gray
+
+.dark_gray 
+	background-color $color_darkgray
+	
+ul li
+		list-style none
+
+header,
+section
+	border-bottom 1px solid $border	
+header
+	font-size 0
+	.left, .center, .right
+		box-sizing: border-box		
+		height 60px		
+		margin 15px	1% 15px 0
+		display inline-block		
+	.left
+		width 15%
+	.center
+		width 29%
+	.right
+		width 54%
+		margin-right 0
+
+section
+	.top
+		&:after
+			content ''
+			display block
+			clear both		
+		.top_left, .top_right
+			margin 15px 0 0 0
+		.top_left
+			float left
+			width 20% 
+		.top_right
+			float right
+			width 79%
+			font-size: 0
+			.top_right_big
+				height 90px
+			.top_right_small
+				display inline-block
+				height 100px
+				width 120px
+				margin 15px 15px 0 0
+	.bottom
+		font-size: 0
+		.bottom_left, .bottom_center, .bottom_right
+			display inline-block			
+			margin 15px 1% 15px 0
+			vertical-align top			
+		.bottom_left
+			width 20%
+			height 100px
+			margin-top 65px
+		.bottom_center, .bottom_right
+			font-size: 16px
+			width 39%
+			height 150px
+		.bottom_right
+			margin-right 0
+
+footer
+	.row-fluid
+		font-size: 0
+	.footer_left, .footer_center, .footer_right
+		font-size: 12px
+		display inline-block
+		vertical-align top
+		width 32.66667%
+		margin 15px 1% 15px 0
+		height 140px
+	.footer_right
+		margin-right 0
+		.footer_right_top, .footer_right_bottom
+			height 65px;
+		.footer_right_top
+			margin-bottom 10px
+	
+
+	
