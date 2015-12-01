@@ -1,0 +1,38 @@
+html, body {
+            margin: 0;
+        }
+        .wrapper {
+            position: relative;
+        }
+        .wrapper > * {
+            border:1px solid green;
+        }
+        .hidden {
+            display:none;
+        }
+        .loading {
+            font-style: italic;
+            color: #ccc;
+        }
+
+        li {
+            list-style: none;
+            display: inline-block;
+        }
+        
+        header {
+            min-height: 3em;
+        }
+        
+        header ul {
+            float: right;
+        }
+
+        header::after {
+            content:'';
+            clear:both;
+        }
+
+        footer {
+            text-align: center;
+        }
