@@ -54,3 +54,15 @@ var third_jq =function() {
 first_jq();
 second_jq();
 third_jq();
+
+//1
+$('p').remove('.loading');
+$('.container-main').append($('.hidden').removeClass('hidden'));
+//2
+$('header nav ul').append($('header nav ul li').get().reverse());
+//3
+var $listLength = $('footer nav ul li').length;
+$('footer nav ul li').each(function(){
+	$(this).find('a span').text('#' + $listLength + ' ');
+	$listLength--;
+});
