@@ -1,0 +1,65 @@
+body{
+	font-family: sans-serif;
+	font-size: 14px;
+}
+.menu {
+	background: #1aa4ff;
+	border-bottom: 34px solid #eeeeee;
+	-webkit-box-shadow: 0px 0px 0px #000;
+	box-shadow: 0 0 10px #000;
+}
+.wrap {
+	width: 900px;
+	margin: 0 auto;
+}
+.menu ul{
+	font-size: 0;
+	margin: 0;
+	padding: 0;
+}
+.menu .wrap>ul{	
+	list-style: none;
+	position: relative;
+	font-size: 0;
+}
+.menu ul li {
+	display: inline-block;
+}
+.menu ul li a{
+	font-size: 14px;
+	display: block;
+	text-decoration: none;
+	padding: 0 14px;
+	line-height: 34px;
+}
+.menu .wrap>ul>li>a{	
+	letter-spacing: -1px;
+	text-transform: uppercase;
+	font-weight: bold;	
+	color: #fff;
+}
+/*.menu .wrap>ul>li>a:hover{*/
+.menu .wrap>ul>li:hover>a{
+	color: #a0a0a0;
+	background-color: #eeeeee;
+}
+.menu .wrap>ul ul{
+	top: 100%;
+	left: 0;
+	position: absolute;
+	display: none;
+}
+.menu .wrap>ul li:hover ul{
+	display: block;
+}
+.menu .wrap>ul ul a{
+	color: #a0a0a0;
+}
+.hidden {
+	display: none;
+}
+.menu_button {
+	width: 100%;
+	background: transparent;
+	border: none;
+}

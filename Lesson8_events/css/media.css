@@ -1,0 +1,25 @@
+@media only screen and (max-width: 600px) {
+	.wrap {
+		width: 100%;
+	}
+	.menu {
+		border:none;
+	}
+	.menu ul li {
+		display: block;
+	}
+	.menu>.wrap>ul>li>a {
+		width: 50%
+	}
+	.menu>.wrap>ul ul {
+		top:0;
+		right:0;
+		left:auto;
+	}
+	.menu>.wrap>ul ul a {
+		background-color: red;
+		color: white;
+		padding-bottom: 4px;
+		width: 100px;
+	}
+}
