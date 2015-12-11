@@ -39,16 +39,18 @@
 		var input = document.getElementsByTagName("input");
 		console.log(random_user["email"]);
 		for(var i=0;i<input.length;i++){
-			(input[i].id == "name")? input[i].value= random_user.name["first"] +" "+random_user.name["last"]:
-			(input[i].id == "login")? input[i].value= random_user["username"]:
-			(input[i].id == "email1")? input[i].value= random_user["email"]:
-			(input[i].id == "email2")? input[i].value= random_user["email"]:
-			(input[i].id == "password1")? input[i].value= random_user["password"]:
-			(input[i].id == "password2")? input[i].value= random_user["password"]:
-			(input[i].id == "city")? input[i].value= random_user.location["city"]:
-			(input[i].id == "zip")? input[i].value= random_user.location["zip"]:
-			(input[i].id == "city")? input[i].value= random_user.location["city"]:
-			(input[i].id == "street")? input[i].value= random_user.location["street"]:false
+			$('input[name='+key+']').val()
+
+			// (input[i].id == "name")? input[i].value= random_user.name["first"] +" "+random_user.name["last"]:
+			// (input[i].id == "login")? input[i].value= random_user["username"]:
+			// (input[i].id == "email1")? input[i].value= random_user["email"]:
+			// (input[i].id == "email2")? input[i].value= random_user["email"]:
+			// (input[i].id == "password1")? input[i].value= random_user["password"]:
+			// (input[i].id == "password2")? input[i].value= random_user["password"]:
+			// (input[i].id == "city")? input[i].value= random_user.location["city"]:
+			// (input[i].id == "zip")? input[i].value= random_user.location["zip"]:
+			// (input[i].id == "city")? input[i].value= random_user.location["city"]:
+			// (input[i].id == "street")? input[i].value= random_user.location["street"]:false
 		}
 	}
 
@@ -92,6 +94,15 @@
 
 })();
 
-
+var newobj = {};
+function search(obj){
+	for (var key in obj){
+		if (typeof obj[key]=='object') {
+			search(obj)
+		} else {
+			newobj[key]=obj[key]	
+		}
+	}
+}
 
 
