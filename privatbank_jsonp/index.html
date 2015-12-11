@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>privat</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body>
 	<button onclick="go()">push me !!!</button>
@@ -57,6 +58,27 @@ function go() {
       // scriptRequest("http://resources.finance.ua/ru/public/currency-cash.json", ok, fail)   
     }
 </script>
+
+
+
+function go(){
+        $.ajax({
+            url:'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5',
+            dataType: 'json',
+            success: function(data){
+                console.log(data);
+            },
+            error:function(e,q,t){
+                console.log(e,q,t);
+            }
+        });
+        
+        
+        //jsonp не работает потому что для формирования правильного запроса 
+        //url должен быть в виде http://url?param1=value1&param2=value2....
+        //В конкретном случае в запросе есть параметр без значения ?json и потому возникает ошибка 
+    }
+
 </html>
 
 
